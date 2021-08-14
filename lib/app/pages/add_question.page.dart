@@ -13,17 +13,25 @@ class AddQuestionPage extends StatefulWidget {
 class _AddQuestionPageState extends State<AddQuestionPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Questions Task')),
-      body: Container(
-        padding: EdgeInsets.all(20),
-        child: Column(
-          children: [
-            FormWidget(),
-            Expanded(
-              child: TabControllerWidget(),
-            ),
-          ],
+    return GestureDetector(
+      onTap: () {
+        FocusScopeNode currentFocus = FocusScope.of(context);
+        if (!currentFocus.hasPrimaryFocus) {
+          currentFocus.unfocus();
+        }
+      },
+      child: Scaffold(
+        appBar: AppBar(title: Text('Questions Task')),
+        body: Container(
+          padding: EdgeInsets.all(20),
+          child: Column(
+            children: [
+              FormWidget(),
+              Expanded(
+                child: TabControllerWidget(),
+              ),
+            ],
+          ),
         ),
       ),
     );
