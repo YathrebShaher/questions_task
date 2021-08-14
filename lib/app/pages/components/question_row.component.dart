@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:questions_task/app/model/math_question.model.dart';
 
@@ -27,14 +26,7 @@ class QuestionRow extends StatelessWidget {
                 : '${question.firstNum} ${question.operator} ${question.secondNum} = ??',
             style: TextStyle(fontSize: 25),
           ),
-          Visibility(
-            visible: true,
-            child: Text('Delay: ${question.seconds} seconds'),
-          ),
-          Visibility(
-            visible: true,
-            child: Text('Location Sent'),
-          ),
+          Text('Delay: ${question.seconds} seconds'),
         ],
       ),
     );
